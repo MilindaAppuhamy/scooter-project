@@ -54,13 +54,13 @@ describe("Scooter methods", () => {
       scooter3.isBroken = true;
 
       expect(() => scooter1.rent(user)).toThrow(
-        "Scooter needs to charge or scooter needs repair"
+        "Scooter #6 needs to charge or scooter needs repair"
       );
       expect(() => scooter2.rent(user)).toThrow(
-        "Scooter needs to charge or scooter needs repair"
+        "Scooter #7 needs to charge or scooter needs repair"
       );
       expect(() => scooter3.rent(user)).toThrow(
-        "Scooter needs to charge or scooter needs repair"
+        "Scooter #8 needs to charge or scooter needs repair"
       );
     });
 
@@ -118,7 +118,7 @@ describe("Scooter methods", () => {
       try {
         await scooter.requestRepair();
       } catch (e) {
-        expect(e.message).toBe("Scooter is not broken.");
+        expect(e.message).toBe("Scooter #13 is not broken.");
       }
     });
   });

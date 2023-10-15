@@ -26,7 +26,7 @@ describe("registerUser method tests", () => {
     try {
       scooterApp.registerUser("Joe Bloggs", "test123", 21);
     } catch (e) {
-      expect(e.message).toBe("already registered.");
+      expect(e.message).toBe("user:Joe Bloggs already registered.");
     }
   });
 
@@ -34,7 +34,7 @@ describe("registerUser method tests", () => {
     try {
       scooterApp.registerUser("Chad", "1234", 17);
     } catch (e) {
-      expect(e.message).toBe("too young to register.");
+      expect(e.message).toBe("user:Chad too young to register.");
     }
   });
 });
@@ -120,7 +120,7 @@ describe("Rent scoooter method", () => {
         scooterApp.registeredUsers["Dash"]
       );
     } catch (e) {
-      expect(e.message).toBe("scooter already rented.");
+      expect(e.message).toBe("scooter #1 already rented.");
     }
   });
 });
@@ -132,7 +132,7 @@ describe("Dock scooter", () => {
     try {
       scooterApp.dockScooter(scooter, "London");
     } catch (e) {
-      expect(e.message).toBe("scooter already at station.");
+      expect(e.message).toBe("scooter #3 already at station.");
     }
   });
 

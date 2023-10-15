@@ -9,7 +9,7 @@ class User {
   login(password) {
     if (password === this.password) {
       this.loggedIn = true;
-      console.log("User logged in.");
+      console.log(`User:${this.username} logged in.`);
     } else {
       throw new Error("Incorrect password.");
     }
@@ -17,7 +17,7 @@ class User {
 
   logout() {
     this.loggedIn = false;
-    console.log("User logged out.");
+    console.log(`User:${this.username} logged out.`);
   }
 }
 

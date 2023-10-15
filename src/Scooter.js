@@ -17,10 +17,12 @@ class Scooter {
         this.station = null;
         this.user = user;
       } else {
-        throw new Error("Scooter needs to charge or scooter needs repair");
+        throw new Error(
+          `Scooter #${this.serial} needs to charge or scooter needs repair`
+        );
       }
     } else {
-      throw new Error("User is not accepted.");
+      throw new Error(`User is not accepted.`);
     }
   }
 
@@ -43,12 +45,12 @@ class Scooter {
 
   async requestRepair() {
     if (!this.isBroken) {
-      throw new Error("Scooter is not broken.");
+      throw new Error(`Scooter #${this.serial} is not broken.`);
     } else {
       const repair = setInterval(async () => {
         await new Promise((resolve) => {
           this.isBroken = false;
-          console.log("Repair completed");
+          console.log(`Scooter ${this.serial} repair completed`);
           resolve();
         });
         clearInterval(repair);
